@@ -10,11 +10,14 @@
 const startBtn = document.getElementById("startBtn");
 const messageEl = document.getElementById("message");
 const trackEl = document.getElementById("track");
+const scoreboardEl = document.getElementById("scoreboard");
 
 const TRACK_LENGTH = 70;
 let tortoisePosition = 1;
 let harePosition = 1;
 let raceIntervalId = null;
+let tortoiseWins = 0;
+let hareWins = 0;
 
 startBtn.addEventListener("click", startRace);
 // start the race with a button click
@@ -135,11 +138,20 @@ function showResult() {
         messageEl.textContent = "It is a tie";
     } else if (tortoisePosition >= TRACK_LENGTH) {
         messageEl.textContent = "Tortoise wins";
+        tortoiseWins++;  
     } else if (harePosition >= TRACK_LENGTH) {
         messageEl.textContent = "Hare wins";
+        hareWins++;
     } else {
         messageEl.textContent = "Race stopped";
     }
+    
+    renderScoreboard();
+}
+
+function renderScoreboard() {
+    scoreboardEl.textContent = `Tortoise: ${tortoiseWins} wins - Hare: ${hareWins} wins`;
 }
 
 renderTrack();
+renderScoreboard();
