@@ -10,11 +10,14 @@
 const startBtn = document.getElementById("startBtn");
 const messageEl = document.getElementById("message");
 const trackEl = document.getElementById("track");
+const scoreboardEl = document.getElementById("scoreboard");
 
 const TRACK_LENGTH = 70;
 let tortoisePosition = 1;
 let harePosition = 1;
 let raceIntervalId = null;
+let tortoiseWins = 0;
+let hareWins = 0;
 
 startBtn.addEventListener("click", startRace);
 // start the race with a button click
