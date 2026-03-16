@@ -138,11 +138,15 @@ function showResult() {
         messageEl.textContent = "It is a tie";
     } else if (tortoisePosition >= TRACK_LENGTH) {
         messageEl.textContent = "Tortoise wins";
+        tortoiseWins++;  
     } else if (harePosition >= TRACK_LENGTH) {
         messageEl.textContent = "Hare wins";
+        hareWins++;
     } else {
         messageEl.textContent = "Race stopped";
     }
+    
+    renderScoreboard();
 }
 
 function renderScoreboard() {
