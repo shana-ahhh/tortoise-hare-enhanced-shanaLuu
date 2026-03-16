@@ -145,4 +145,9 @@ function showResult() {
     }
 }
 
+function renderScoreboard() {
+    scoreboardEl.textContent = `Tortoise: ${tortoiseWins} wins - Hare: ${hareWins} wins`;
+}
+
 renderTrack();
+renderScoreboard();
